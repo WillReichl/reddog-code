@@ -15,13 +15,13 @@ spec:
       labels:
         app: accounting-service
       annotations:
-        dapr.io/enabled: "true"
+        dapr.io/enabled: 'true'
         dapr.io/app-id: accounting-service
-        dapr.io/app-port: "80"
+        dapr.io/app-port: '80'
     spec:
       containers:
         - name: accounting-service
-          image: reddogacr12345.azurecr.io/reddogacr12345/reddog-accounting-service:latest
+          image: reddogacr12345.azurecr.io/reddogacr12345/reddog-retail-demo/reddog-retail-accounting-service:65e23c7
           ports:
             - containerPort: 80
           imagePullPolicy: Always
