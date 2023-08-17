@@ -54,6 +54,9 @@ jobs:
             org.opencontainers.image.source=${{ github.repositoryUrl }}
             org.opencontainers.image.created=${{ needs.set-env.outputs.created }}
             org.opencontainers.image.revision=${{ needs.set-env.outputs.version }}
+      - name: Echo yaml
+        run: |
+          cat manifests/deployments/accounting-service.yaml
       - name: Update deployment yaml
         uses: fjogeleit/yaml-update-action@master
         with:
@@ -65,6 +68,3 @@ jobs:
           message: "Updated accounting service deployment manifest."
           createPR: "false"
           updateFile: "true"
-      - name: Echo yaml
-        run: |
-          cat manifests/deployments/accounting-service.yaml
